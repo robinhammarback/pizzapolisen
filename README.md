@@ -30,3 +30,7 @@ På startsidan visas en tydlig notering om att tipsfunktionen inte är inkopplad
 
 ## Domän
 Domän är inte köpt eller ansluten i detta paket. Kontrollera tillgänglighet hos en registrar innan köp.
+
+
+### Uppdatering: delbetyg och stycken
+Kör den uppdaterade `supabase-setup.sql` i Supabase SQL Editor för att lägga till de fem delbetygen och valideringsreglerna. Totalbetyget visas på skalan 5–55 eftersom fem kategorier med minsta värde 1 ger summan 5; max är 55. Textens radbrytningar bevaras.

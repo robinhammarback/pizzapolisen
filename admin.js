@@ -52,7 +52,7 @@ $("review-form").addEventListener("submit",async e=>{
  if(!client){message(editorStatus,"Backend saknas; ingenting har publicerats.","error");return;}
  const categoryIds=["taste-score","price-score","interior-score","clientele-score","svennefaktor-score"];
  const categoryScores=categoryIds.map(id=>Number($(id).value));
- if(categoryScores.some(n=>!Number.isInteger(n)||n<1||n>11)){message(editorStatus,"Alla delbetyg måste vara heltal mellan 1 och 11.","error");return;}
+ if(categoryScores.some(n=>!Number.isFinite(n)||n<1||n>11||Math.abs(n*2-Math.round(n*2))>1e-9)){message(editorStatus,"Alla delbetyg måste vara mellan 1 och 11 och gå i steg om 0,5.","error");return;}
  const score=categoryScores.reduce((a,b)=>a+b,0);
  const record={pizzeria:$("pizzeria").value.trim(),location:$("location").value.trim(),pizza:$("pizza").value.trim(),visit_date:$("visit-date").value||null,score,taste_score:categoryScores[0],price_score:categoryScores[1],interior_score:categoryScores[2],clientele_score:categoryScores[3],svennefaktor_score:categoryScores[4],photo_url:$("photo-url").value.trim()||null,review_text:$("review-text").value.trim()};
  const id=$("review-id").value;

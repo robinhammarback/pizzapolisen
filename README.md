@@ -34,3 +34,6 @@ Domän är inte köpt eller ansluten i detta paket. Kontrollera tillgänglighet 
 
 ### Uppdatering: delbetyg och stycken
 Kör den uppdaterade `supabase-setup.sql` i Supabase SQL Editor för att lägga till de fem delbetygen och valideringsreglerna. Totalbetyget visas på skalan 5–55 eftersom fem kategorier med minsta värde 1 ger summan 5; max är 55. Textens radbrytningar bevaras.
+
+
+Betygsskalan tillåter halva poäng (t.ex. 1,5; 2,5; 10,5) i alla fem delkategorier. Totalbetyget summeras automatiskt och kan också bli ett halvt steg. Kör den uppdaterade `supabase-setup.sql` i SQL Editor för att ändra befintliga betygskolumner till decimaler.
